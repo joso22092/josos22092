@@ -1,0 +1,1534 @@
+/* ========================================= */
+/* RESET */
+/* ========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+}
+
+/* ========================================= */
+/* FONDO */
+/* ========================================= */
+
+body{
+
+    background:radial-gradient(circle at top center,
+        #fff6fb 0%,
+        #ffe6f2 30%,
+        #ffd1e4 60%,
+        #ffffff 100%
+    );
+
+    background-attachment: fixed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* ========================================= */
+/* INTRO */
+/* ========================================= */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        160deg,
+        #ffbfd8,
+        #ffe6f1
+    );
+
+    z-index:999;
+
+    transition:1s;
+
+    z-index:100;
+
+
+}
+
+#intro.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.intro-card{
+
+    width:520px;
+
+    max-width:90%;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.15);
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+.heart{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.intro-card h3{
+
+    color:#ff4d8d;
+
+    font-size:28px;
+
+}
+
+.intro-card h1{
+
+    color:#d81b60;
+
+    font-size:65px;
+
+    margin:20px 0;
+
+}
+
+.intro-card p{
+
+    color:#666;
+
+    font-size:22px;
+
+    line-height:35px;
+
+}
+
+#startButton{
+
+    margin-top:40px;
+
+    border:none;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff4d8d,#ff8fab);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(255,77,141,.4);
+
+}
+
+#startButton:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:0 20px 40px rgba(255,77,141,.5);
+
+}
+
+#startButton:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ========================================= */
+/* LIBRO */
+/* ========================================= */
+
+#bookArea{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1s;
+    
+    position:relative;
+
+    z-index:20;
+
+}
+
+#bookArea.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ========================================= */
+/* LIBRO */
+/* ========================================= */
+
+#book{
+
+    position:relative;
+
+    width:900px;
+
+    max-width:92vw;
+
+    height:580px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    background:#fdfdfd;
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.25);
+    transition:.25s;
+    cursor:pointer;
+
+}
+
+/* ========================================= */
+/* PAGINAS */
+/* ========================================= */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    background:white;
+
+    transform-origin:left center;
+
+    transform-style:preserve-3d;
+
+    transition:1s ease;
+
+    backface-visibility:hidden;
+
+    border-radius:0 12px 12px 0;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.page.active{
+
+    z-index:20;
+
+    transform:rotateY(0deg);
+
+}
+
+.page.turned{
+
+    transform:rotateY(-180deg);
+
+    z-index:5;
+
+}
+
+.page.active{
+
+    display:block;
+
+}
+
+/* ========================================= */
+/* PORTADA */
+/* ========================================= */
+
+.cover{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #ff5f9e,
+
+    #ff85b5
+
+    );
+
+    position:relative;
+
+}
+
+/* Marco */
+
+.cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20px;
+
+    border:3px solid rgba(255,255,255,.35);
+
+    border-radius:12px;
+
+}
+
+/* brillo */
+
+.cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:900px;
+
+    background:rgba(255,255,255,.2);
+
+    transform:rotate(25deg);
+
+    left:-250px;
+
+    animation:shine 7s linear infinite;
+
+}
+
+.cover h2{
+
+    font-size:38px;
+
+    letter-spacing:4px;
+
+}
+
+.cover h1{
+
+    font-size:70px;
+
+    margin:25px;
+
+}
+
+.cover p{
+
+    font-size:22px;
+
+}
+
+/* ========================================= */
+/* CONTENIDO */
+/* ========================================= */
+
+.content{
+
+    width:100%;
+
+    height:100%;
+
+    background:white;
+
+    padding:70px;
+
+    overflow:auto;
+
+}
+
+.content h2{
+
+    color:#d81b60;
+
+    margin-bottom:25px;
+
+    font-size:38px;
+
+}
+
+.content p{
+
+    font-size:22px;
+
+    line-height:40px;
+
+    color:#444;
+
+    margin-bottom:18px;
+
+}
+
+.final{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.final h1{
+
+    font-size:90px;
+
+}
+
+.final h2{
+
+    margin-top:20px;
+
+}
+
+/* ========================================= */
+/* BOTONES */
+/* ========================================= */
+
+#controls{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+#controls button{
+
+    border:none;
+
+    padding:16px 35px;
+
+    background:#ff4d8d;
+
+    color:white;
+
+    font-size:18px;
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#controls button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ========================================= */
+/* ANIMACIONES */
+/* ========================================= */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-250px;
+
+    }
+
+    to{
+
+        left:1200px;
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media(max-width:900px){
+
+    #book{
+
+        height:75vh;
+
+    }
+
+    .cover h1{
+
+        font-size:48px;
+
+    }
+
+    .cover h2{
+
+        font-size:28px;
+
+    }
+
+    .content{
+
+        padding:35px;
+
+    }
+
+    .content h2{
+
+        font-size:30px;
+
+    }
+
+    .content p{
+
+        font-size:19px;
+
+        line-height:34px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .intro-card{
+
+        padding:30px;
+
+    }
+
+    .intro-card h1{
+
+        font-size:42px;
+
+    }
+
+    .intro-card h3{
+
+        font-size:22px;
+
+    }
+
+    .intro-card p{
+
+        font-size:18px;
+
+    }
+
+    #controls{
+
+        flex-direction:column;
+
+        width:90%;
+
+    }
+
+    #controls button{
+
+        width:100%;
+
+    }
+
+}
+/*==========================
+PORTADA 3D
+==========================*/
+
+#book{
+
+    perspective:2000px;
+
+    transform-style:preserve-3d;
+
+}
+
+#bookCover{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    left:0;
+
+    top:0;
+
+    z-index:50;
+
+    transform-origin:left center;
+
+    transition:1.6s;
+
+}
+
+#bookCover.open{
+
+    transform:rotateY(-165deg);
+
+}
+
+.coverFront{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:15px;
+
+    background:linear-gradient(145deg,#ff5d9d,#ff87b6);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.coverFront::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border:3px solid rgba(255,255,255,.3);
+
+    border-radius:10px;
+
+}
+
+.coverFront::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:900px;
+
+    background:rgba(255,255,255,.25);
+
+    transform:rotate(30deg);
+
+    left:-250px;
+
+    animation:shineMove 8s linear infinite;
+
+}
+
+.coverTitle{
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+.coverTitle h1{
+
+    font-size:65px;
+
+    margin:25px 0;
+
+}
+
+.coverTitle h2{
+
+    font-size:34px;
+
+}
+
+.coverTitle p{
+
+    font-size:22px;
+
+}
+
+@keyframes shineMove{
+
+    from{
+
+        left:-250px;
+
+    }
+
+    to{
+
+        left:1200px;
+
+    }
+
+}
+/*==========================
+PAPEL
+==========================*/
+
+.page{
+
+    background:
+    linear-gradient(
+        to right,
+        #fafafa,
+        #ffffff
+    );
+
+}
+
+.content{
+
+    position:relative;
+
+}
+
+.content::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:8px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        to right,
+
+        rgba(0,0,0,.08),
+
+        transparent
+
+    );
+
+}
+/*==================================
+PARTICULAS
+==================================*/
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    animation:floatUp linear forwards;
+
+    opacity:.8;
+
+}
+
+@keyframes floatUp{
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+/*=========================================
+SOMBRA
+=========================================*/
+
+#bookShadow{
+
+    position:absolute;
+
+    width:108%;
+
+    height:108%;
+
+    left:-20px;
+
+    top:20px;
+
+    background:rgba(0,0,0,.25);
+
+    filter:blur(35px);
+
+    border-radius:20px;
+
+    z-index:-5;
+
+}
+
+/*=========================================
+LOMO
+=========================================*/
+
+#bookSpine{
+
+    position:absolute;
+
+    left:-18px;
+
+    top:0;
+
+    width:28px;
+
+    height:100%;
+
+    border-radius:18px 0 0 18px;
+
+    background:
+
+    linear-gradient(
+
+        to right,
+
+        #b91d5d,
+
+        #ff6aa8
+
+    );
+
+}
+
+/*=========================================
+HOJAS
+=========================================*/
+
+#pagesEdge{
+
+    position:absolute;
+
+    right:0;
+
+    top:12px;
+
+    width:14px;
+
+    height:96%;
+
+    border-radius:0 12px 12px 0;
+
+    background:
+
+    repeating-linear-gradient(
+
+        to bottom,
+
+        #ffffff,
+
+        #ffffff 3px,
+
+        #efefef 3px,
+
+        #efefef 6px
+
+    );
+
+}
+/*=========================================
+BRILLO LATERAL
+=========================================*/
+
+#book::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:6px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        to right,
+
+        rgba(255,255,255,.7),
+
+        transparent
+
+    );
+
+}
+/*=========================
+BOTON MUSICA
+=========================*/
+
+#musicBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff4d8d;
+
+    color:white;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    z-index:10001;
+
+    transition:.3s;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.1);
+
+}
+/*==========================
+GALERIA
+==========================*/
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.photo{
+
+    background:white;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    transform:rotate(-2deg);
+
+    transition:.4s;
+
+}
+
+.photo:nth-child(even){
+
+    transform:rotate(2deg);
+
+}
+
+.photo:hover{
+
+    transform:scale(1.05) rotate(0deg);
+
+}
+
+.photo img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+}
+
+.photo span{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:12px;
+
+    font-size:18px;
+
+    color:#d81b60;
+
+}
+/*=========================
+REGALO
+=========================*/
+
+.giftContainer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100%;
+
+}
+
+#giftBox{
+
+    font-size:120px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    animation:jump 2s infinite;
+
+}
+
+#giftBox:hover{
+
+    transform:scale(1.15);
+
+}
+
+#giftMessage{
+
+    margin-top:40px;
+
+    max-width:700px;
+
+    text-align:center;
+
+    font-size:26px;
+
+    color:#d81b60;
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+#giftMessage.show{
+
+    opacity:1;
+
+}
+
+@keyframes jump{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+/*=========================
+CONFETI
+=========================*/
+
+.confetti{
+
+    position:fixed;
+
+    width:12px;
+
+    height:12px;
+
+    top:-20px;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:translateY(120vh) rotate(720deg);
+
+    }
+
+}
+/*=========================================
+FONDO MÁGICO
+=========================================*/
+
+#magicBackground{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-20;
+
+    pointer-events:none;
+
+}
+
+.stars{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background-image:
+
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.25;
+
+    animation:starsMove 50s linear infinite;
+
+}
+
+.glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+}
+
+.glow1{
+
+    width:450px;
+
+    height:450px;
+
+    background:#ff7eb9;
+
+    left:-120px;
+
+    top:-100px;
+
+    animation:moveGlow1 18s infinite alternate;
+
+}
+
+.glow2{
+
+    width:350px;
+
+    height:350px;
+
+    background:#ffd166;
+
+    right:-100px;
+
+    top:100px;
+
+    animation:moveGlow2 20s infinite alternate;
+
+}
+
+.glow3{
+
+    width:500px;
+
+    height:500px;
+
+    background:#c77dff;
+
+    left:35%;
+
+    bottom:-200px;
+
+    animation:moveGlow3 25s infinite alternate;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-200px);
+
+    }
+
+}
+
+@keyframes moveGlow1{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(180px,120px);
+
+    }
+
+}
+
+@keyframes moveGlow2{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-150px,160px);
+
+    }
+
+}
+
+@keyframes moveGlow3{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(120px,-180px);
+
+    }
+
+}
+/*=====================================
+INFORMACIÓN DEL LIBRO
+=====================================*/
+
+#bookInfo{
+
+    margin-top:20px;
+
+    width:900px;
+
+    max-width:90vw;
+
+}
+
+#pageNumber{
+
+    display:block;
+
+    text-align:center;
+
+    color:#d81b60;
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+}
+
+#progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:#ffd5e5;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #ff4d8d,
+        #ff9ac1
+    );
+
+    transition:.5s;
+
+}
+/*=====================================
+PANTALLA FINAL
+=====================================*/
+
+#finalScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#ff4d8d,#7b2cbf);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.8s;
+
+    z-index:9999;
+
+}
+
+#finalScreen.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.finalContent{
+
+    text-align:center;
+
+    color:white;
+
+    max-width:700px;
+
+    padding:40px;
+
+}
+
+.finalContent h1{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.finalContent h2{
+
+    font-size:45px;
+
+    margin-bottom:30px;
+
+}
+
+.finalContent p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+#restartBook{
+
+    margin-top:40px;
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:#d81b60;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
